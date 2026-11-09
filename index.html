@@ -1,0 +1,989 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101010">
+<meta name="description" content="ATHLEX GT: ropa deportiva para entrenar, moverte y superar tus límites.">
+<title>ATHLEX GT | Vive el deporte</title>
+
+<style>
+:root {
+    --negro: #090909;
+    --panel: #151515;
+    --naranja: #f36b18;
+    --blanco: #f7f7f7;
+    --gris: #aaa;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--negro);
+    color: var(--blanco);
+    line-height: 1.55;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.wrap {
+    width: min(1180px, 92%);
+    margin: auto;
+}
+
+/* ENCABEZADO */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: #080808ed;
+    border-bottom: 1px solid #ffffff18;
+}
+
+.nav {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    font-size: 25px;
+}
+
+.brand img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.brand span {
+    color: var(--naranja);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+nav a:hover {
+    color: var(--naranja);
+}
+
+.menu {
+    display: none;
+    background: none;
+    border: 1px solid #555;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+/* PORTADA */
+
+.hero {
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    background:
+    linear-gradient(90deg, #050505f2 0%, #050505bd 48%, #05050530 100%),
+    url('img/portada-catalogo.jpg') center 38%/cover;
+}
+
+.hero-content {
+    padding: 90px 0;
+    max-width: 650px;
+}
+
+.eyebrow {
+    color: var(--naranja);
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+h1 {
+    font-size: clamp(48px, 8vw, 92px);
+    line-height: .96;
+    letter-spacing: -3px;
+    margin: 18px 0;
+}
+
+h1 span,
+.orange {
+    color: var(--naranja);
+}
+
+.hero p {
+    font-size: 18px;
+    color: #ddd;
+    max-width: 520px;
+    margin-bottom: 28px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--naranja);
+    color: #111;
+    padding: 14px 24px;
+    border-radius: 3px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 0;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn:hover {
+    background: #ff8a43;
+    transform: translateY(-2px);
+}
+
+/* SECCIONES */
+
+section {
+    padding: 82px 0;
+}
+
+.section-head {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.section-head .eyebrow {
+    margin-bottom: 8px;
+}
+
+h2 {
+    font-size: clamp(30px, 5vw, 48px);
+    line-height: 1.05;
+    text-transform: uppercase;
+}
+
+.section-head p {
+    color: var(--gris);
+    margin-top: 12px;
+}
+
+/* IDENTIDAD */
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: 38px;
+    align-items: center;
+}
+
+.intro-grid img {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ffffff20;
+}
+
+.intro-grid p {
+    color: #c6c6c6;
+    margin: 16px 0;
+}
+
+.pill {
+    display: inline-block;
+    border: 1px solid #5a321e;
+    color: #ff9a5e;
+    padding: 7px 12px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 5px 5px 0 0;
+}
+
+/* CATÁLOGOS */
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.catalog-card {
+    background: var(--panel);
+    border: 1px solid #ffffff16;
+    overflow: hidden;
+    border-radius: 5px;
+    transition: .25s;
+}
+
+.catalog-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--naranja);
+}
+
+.catalog-card img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: contain;
+    background: #222;
+}
+
+.caption {
+    padding: 17px;
+}
+
+.caption h3 {
+    font-size: 17px;
+    text-transform: uppercase;
+}
+
+.caption p {
+    font-size: 13px;
+    color: var(--gris);
+    margin-top: 5px;
+}
+
+/* PRODUCTOS */
+
+#productos {
+    background: #101010;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    align-items: center;
+    background: #151515;
+    padding: 15px;
+    border: 1px solid #ffffff18;
+}
+
+.product img {
+    width: 100%;
+    height: 260px;
+    object-fit: contain;
+    background: #202020;
+}
+
+.product p {
+    color: var(--gris);
+    font-size: 14px;
+    margin: 9px 0 15px;
+}
+
+/* GALERÍA */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.gallery a {
+    overflow: hidden;
+    border: 1px solid #ffffff1a;
+    background: #151515;
+}
+
+.gallery img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: .3s;
+}
+
+.gallery a:hover img {
+    transform: scale(1.04);
+}
+
+/* PROMOCIONES */
+
+.promo {
+    background: linear-gradient(100deg, #151515, #301506);
+    border-block: 1px solid #f36b1844;
+    text-align: center;
+}
+
+.promo p {
+    color: #ccc;
+    margin: 12px auto 22px;
+    max-width: 620px;
+}
+
+/* REDES SOCIALES */
+
+.social-section {
+    background: #101010;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.social-card {
+    padding: 25px;
+    background: #191919;
+    border: 1px solid #ffffff1c;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.social-card h3 {
+    margin: 12px 0 5px;
+}
+
+.social-card p {
+    color: var(--gris);
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+
+.social-card .btn {
+    font-size: 12px;
+    padding: 11px 16px;
+}
+
+.qr-row {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.qr-row img {
+    width: 155px;
+    background: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.qr-label {
+    font-size: 12px;
+    color: var(--gris);
+    text-align: center;
+    margin-top: 7px;
+}
+
+/* CONTACTO */
+
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    color: #bbb;
+    margin: 10px 0;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+    border-top: 1px solid #ffffff1a;
+    padding: 30px 0;
+    color: #999;
+    text-align: center;
+    font-size: 13px;
+}
+
+footer strong {
+    color: white;
+    letter-spacing: 3px;
+}
+
+/* WHATSAPP FLOTANTE */
+
+.float-wa {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 15;
+    background: #20c767;
+    color: #07190e;
+    border-radius: 50px;
+    padding: 14px 19px;
+    font-weight: 900;
+    box-shadow: 0 5px 22px #0008;
+}
+
+/* DISEÑO RESPONSIVE */
+
+@media(max-width: 850px) {
+    nav {
+        gap: 13px;
+        font-size: 11px;
+    }
+
+    .catalog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 620px) {
+    .nav {
+        min-height: 68px;
+        flex-wrap: wrap;
+        padding: 10px 0;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        padding: 10px 0 15px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    .hero {
+        min-height: 540px;
+        background-position: 58% center;
+    }
+
+    .hero-content {
+        padding: 70px 0;
+    }
+
+    .intro-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .catalog-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .caption {
+        padding: 11px;
+    }
+
+    .caption h3 {
+        font-size: 13px;
+    }
+
+    .caption p {
+        font-size: 11px;
+    }
+
+    .product {
+        grid-template-columns: 1fr;
+    }
+
+    .product img {
+        height: 220px;
+    }
+
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery img {
+        height: 190px;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="wrap nav">
+
+<a class="brand" href="#inicio">
+    <img src="img/logo-athlex.jpg" alt="Escudo ATHLEX">
+    <span>ATHLEX</span> GT
+</a>
+
+<button class="menu"
+onclick="document.querySelector('nav').classList.toggle('open')">
+☰ MENÚ
+</button>
+
+<nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#marca">La marca</a>
+    <a href="#catalogos">Catálogos</a>
+    <a href="#productos">Productos</a>
+    <a href="#redes">Redes sociales</a>
+    <a href="#contacto">Contacto</a>
+</nav>
+
+</div>
+</header>
+
+<main>
+
+<!-- PORTADA -->
+
+<section class="hero" id="inicio">
+<div class="wrap">
+<div class="hero-content">
+
+<div class="eyebrow">ATHLEX GT · Ropa deportiva</div>
+
+<h1>
+VIVE EL<br>
+<span>DEPORTE.</span><br>
+VISTE ATHLEX.
+</h1>
+
+<p>
+Comodidad, estilo y actitud para acompañarte
+en cada entrenamiento y en cada desafío.
+</p>
+
+<a class="btn" href="#catalogos">
+Explorar catálogos
+</a>
+
+</div>
+</div>
+</section>
+
+<!-- IDENTIDAD -->
+
+<section id="marca">
+<div class="wrap intro-grid">
+
+<img src="img/mascota-athlex.jpg"
+alt="Mascota pantera ATHLEX">
+
+<div>
+<div class="eyebrow">Nuestra identidad</div>
+
+<h2>
+Más que una marca,<br>
+<span class="orange">un estilo de vida.</span>
+</h2>
+
+<p>
+ATHLEX representa fuerza, disciplina, energía
+y determinación. Nuestra identidad, inspirada
+en la pantera, acompaña a quienes buscan
+superar sus propios límites.
+</p>
+
+<p>
+Descubre nuestras propuestas de ropa deportiva
+para hombres, mujeres y niños.
+</p>
+
+<span class="pill">Fuerza</span>
+<span class="pill">Velocidad</span>
+<span class="pill">Actitud</span>
+
+</div>
+</div>
+</section>
+
+<!-- CATÁLOGOS -->
+
+<section id="catalogos">
+<div class="wrap">
+
+<div class="section-head">
+<div class="eyebrow">Colecciones ATHLEX</div>
+<h2>Explora los <span class="orange">catálogos</span></h2>
+<p>Conoce nuestras colecciones deportivas.</p>
+</div>
+
+<div class="catalog-grid">
+
+<a class="catalog-card"
+href="img/catalogo-hombres.jpg" target="_blank">
+<img src="img/catalogo-hombres.jpg"
+alt="Catálogo ATHLEX línea caballeros">
+<div class="caption">
+<h3>Línea caballeros</h3>
+<p>Prendas y complementos deportivos.</p>
+</div>
+</a>
+
+<a class="catalog-card"
+href="img/catalogo-mujeres.jpg" target="_blank">
+<img src="img/catalogo-mujeres.jpg"
+alt="Catálogo ATHLEX línea damas">
+<div class="caption">
+<h3>Línea damas</h3>
+<p>Estilo, comodidad y movimiento.</p>
+</div>
+</a>
+
+<a class="catalog-card"
+href="img/catalogo-ninos.jpg" target="_blank">
+<img src="img/catalogo-ninos.jpg"
+alt="Catálogo ATHLEX línea niños">
+<div class="caption">
+<h3>Línea niños</h3>
+<p>Energía y comodidad para los pequeños.</p>
+</div>
+</a>
+
+<a class="catalog-card"
+href="img/detalles-calidad.jpg" target="_blank">
+<img src="img/detalles-calidad.jpg"
+alt="Detalles y calidad ATHLEX">
+<div class="caption">
+<h3>Detalles y calidad</h3>
+<p>La diferencia está en los detalles.</p>
+</div>
+</a>
+
+<a class="catalog-card"
+href="img/campana-familia.jpg" target="_blank">
+<img src="img/campana-familia.jpg"
+alt="ATHLEX para toda la familia">
+<div class="caption">
+<h3>Para toda la familia</h3>
+<p>Una propuesta para todos.</p>
+</div>
+</a>
+
+<a class="catalog-card"
+href="img/banner-athlex-club.jpg" target="_blank">
+<img src="img/banner-athlex-club.jpg"
+alt="ATHLEX Club">
+<div class="caption">
+<h3>ATHLEX Club</h3>
+<p>Únete a nuestra comunidad.</p>
+</div>
+</a>
+
+</div>
+</div>
+</section>
+
+<!-- PRODUCTOS -->
+
+<section id="productos">
+<div class="wrap">
+
+<div class="section-head">
+<div class="eyebrow">Selección de producto</div>
+<h2>Productos <span class="orange">destacados</span></h2>
+<p>Conoce algunos de nuestros productos.</p>
+</div>
+
+<div class="products-grid">
+
+<article class="product">
+<img src="img/producto-short.jpg"
+alt="Short deportivo">
+
+<div>
+<h3>Short deportivo</h3>
+<p>
+Consulta disponibilidad de tallas,
+colores y precio por WhatsApp.
+</p>
+
+<a class="btn"
+href="https://wa.me/50241035971?text=Hola%20ATHLEX%2C%20quisiera%20informaci%C3%B3n%20del%20short%20deportivo."
+target="_blank">
+Consultar
+</a>
+</div>
+</article>
+
+<article class="product">
+<img src="img/producto-camiseta.jpg"
+alt="Camiseta deportiva">
+
+<div>
+<h3>Camiseta deportiva</h3>
+<p>
+Consulta disponibilidad de tallas,
+colores y precio por WhatsApp.
+</p>
+
+<a class="btn"
+href="https://wa.me/50241035971?text=Hola%20ATHLEX%2C%20quisiera%20informaci%C3%B3n%20de%20la%20camiseta%20deportiva."
+target="_blank">
+Consultar
+</a>
+</div>
+</article>
+
+</div>
+</div>
+</section>
+
+<!-- GALERÍA PUBLICITARIA -->
+
+<section>
+<div class="wrap">
+
+<div class="section-head">
+<div class="eyebrow">Campañas de marca</div>
+<h2>Actitud <span class="orange">ATHLEX</span></h2>
+<p>Conoce más piezas visuales de nuestra identidad.</p>
+</div>
+
+<div class="gallery">
+
+<a href="img/campana-marca.jpg" target="_blank">
+<img src="img/campana-marca.jpg" alt="Campaña ATHLEX">
+</a>
+
+<a href="img/detalle-logo.jpg" target="_blank">
+<img src="img/detalle-logo.jpg" alt="Detalle del logotipo">
+</a>
+
+<a href="img/campana-vive-deporte.jpg" target="_blank">
+<img src="img/campana-vive-deporte.jpg" alt="Vive el deporte">
+</a>
+
+<a href="img/publicidad-athlex.jpg" target="_blank">
+<img src="img/publicidad-athlex.jpg" alt="Publicidad ATHLEX">
+</a>
+
+<a href="img/tienda-athlex.jpg" target="_blank">
+<img src="img/tienda-athlex.jpg" alt="Concepto de tienda ATHLEX">
+</a>
+
+<a href="img/campana-deportistas.jpg" target="_blank">
+<img src="img/campana-deportistas.jpg" alt="Campaña deportistas">
+</a>
+
+<a href="img/foto-productos.jpg" target="_blank">
+<img src="img/foto-productos.jpg" alt="Productos ATHLEX">
+</a>
+
+<a href="img/promo-regalo.jpg" target="_blank">
+<img src="img/promo-regalo.jpg" alt="Promoción ATHLEX">
+</a>
+
+</div>
+</div>
+</section>
+
+<!-- PROMOCIÓN -->
+
+<section class="promo">
+<div class="wrap">
+
+<div class="eyebrow">Tu esfuerzo merece estilo</div>
+
+<h2>
+SUPERA TUS <span class="orange">LÍMITES.</span>
+</h2>
+
+<p>
+Encuentra tu próxima prenda deportiva
+y consulta directamente con ATHLEX GT.
+</p>
+
+<a class="btn"
+href="https://wa.me/50241035971"
+target="_blank">
+Escríbenos por WhatsApp
+</a>
+
+</div>
+</section>
+
+<!-- REDES SOCIALES -->
+
+<section class="social-section" id="redes">
+<div class="wrap">
+
+<div class="section-head">
+<div class="eyebrow">Conecta con nosotros</div>
+<h2>Sigue a <span class="orange">ATHLEX</span></h2>
+<p>
+Encuentra novedades, catálogos y contenido de nuestra marca.
+</p>
+</div>
+
+<div class="social-grid">
+
+<article class="social-card">
+<h3>Facebook</h3>
+<p>Visita nuestra página de Facebook.</p>
+
+<a class="btn"
+href="https://www.facebook.com/share/1FK7qVjKGN/"
+target="_blank" rel="noopener">
+Visitar Facebook
+</a>
+</article>
+
+<article class="social-card">
+<h3>Instagram</h3>
+<p>@ATHLEXGT</p>
+
+<a class="btn"
+href="https://www.instagram.com/athlexgt/"
+target="_blank" rel="noopener">
+Visitar Instagram
+</a>
+</article>
+
+<article class="social-card">
+<h3>TikTok</h3>
+<p>@athlex.gt</p>
+
+<a class="btn"
+href="https://www.tiktok.com/@athlex.gt"
+target="_blank" rel="noopener">
+Visitar TikTok
+</a>
+</article>
+
+</div>
+
+<div class="qr-row">
+
+<div>
+<a href="img/instagram-qr.jpg" target="_blank">
+<img src="img/instagram-qr.jpg"
+alt="Código QR de Instagram ATHLEX">
+</a>
+<div class="qr-label">QR de Instagram</div>
+</div>
+
+<div>
+<a href="img/tiktok-qr.jpg" target="_blank">
+<img src="img/tiktok-qr.jpg"
+alt="Código QR de TikTok ATHLEX">
+</a>
+<div class="qr-label">QR de TikTok</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- CONTACTO -->
+
+<section class="contact" id="contacto">
+<div class="wrap">
+
+<div class="eyebrow">Estamos para atenderte</div>
+
+<h2>Contacto <span class="orange">ATHLEX GT</span></h2>
+
+<p>Teléfono y WhatsApp: <strong>+502 4103 5971</strong></p>
+
+<p>
+Facebook:
+<a class="orange"
+href="https://www.facebook.com/share/1FK7qVjKGN/"
+target="_blank">ATHLEX</a>
+</p>
+
+<p>
+Instagram:
+<a class="orange"
+href="https://www.instagram.com/athlexgt/"
+target="_blank">@ATHLEXGT</a>
+</p>
+
+<p>
+TikTok:
+<a class="orange"
+href="https://www.tiktok.com/@athlex.gt"
+target="_blank">@athlex.gt</a>
+</p>
+
+<br>
+
+<a class="btn"
+href="https://wa.me/50241035971?text=Hola%20ATHLEX%20GT%2C%20deseo%20informaci%C3%B3n."
+target="_blank">
+Contactar por WhatsApp
+</a>
+
+</div>
+</section>
+
+</main>
+
+<!-- PIE DE PÁGINA -->
+
+<footer>
+<div class="wrap">
+<strong>ATHLEX GT</strong>
+<p>Vive el deporte. Viste ATHLEX.</p>
+<p>
+© <span id="year"></span>
+ATHLEX GT. Todos los derechos reservados.
+</p>
+</div>
+</footer>
+
+<!-- BOTÓN FLOTANTE WHATSAPP -->
+
+<a class="float-wa"
+href="https://wa.me/50241035971"
+target="_blank"
+aria-label="WhatsApp ATHLEX">
+WhatsApp ↗
+</a>
+
+<script>
+document.getElementById("year").textContent =
+new Date().getFullYear();
+</script>
+
+</body>
+</html>
